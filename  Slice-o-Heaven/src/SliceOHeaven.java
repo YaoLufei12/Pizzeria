@@ -30,39 +30,39 @@ public class  SliceOHeaven {
         orderTotal = order_total;
     }
     
-    public String getorderID(){
-        return orderID;
-    }
     public void setorderID(String orderID){
         this.orderID = orderID;
     }
-
-    public String getpizzaIngredients(){
-        return pizzaIngredients;
+    public String getorderID(){
+        return orderID;
     }
+    
     public void setpizzaIngredients(String pizzaIngredients){
         this.pizzaIngredients = pizzaIngredients;
     }
-    
-    public String getsides(){
-        return sides;
+    public String getpizzaIngredients(){
+        return pizzaIngredients;
     }
+    
     public void setsides(String sides){
         this.sides = sides;
     }
-    
-    public String getdrinks(){
+    public String getsides(){
         return sides;
     }
+    
     public void setdrinks(String drinks){
         this.drinks = drinks;
     }
-
-    public String getorderTotal(){
+    public String getdrinks(){
         return sides;
     }
+
     public void setorderTotal(double orderTotal){
         this.orderTotal = orderTotal ;
+    }
+    public String getorderTotal(){
+        return sides;
     }
 
     public void takeOrder(String id, String Price, String Ingredients, String sides, String drinks, double total){
