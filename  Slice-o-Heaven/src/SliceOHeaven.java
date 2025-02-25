@@ -1,23 +1,76 @@
 public class  SliceOHeaven {
+    public final String DEF_ORDER_ID = "DEF-SOH-099";
+    public final String DEF_PIZZA_INGREDIENTS = "Mozzarella Cheese";
+    public final double DEF_ORDER_TOTAL = 15.00;
+
     public String storeName;
     public String storeAddress;
     public String storeMenu;
     public String storeEmail;
     public long storePhone;
+    public String pizzaPrice;
     
     private String orderID;
     private String pizzaIngredients;
-    private String pizzaPrice;
     private String sides;
     private String drinks;
     private double orderTotal;
      
-public void takeOrder(String id, String Price, String Ingredients, String Sides, String Drinks, double total){
+    public SliceOHeaven(String DEF_ORDER_ID, String DEF_PIZZA_INGREDIENTS, double DEF_ORDER_TOTAL, String sides, String drinks){
+        orderID = DEF_ORDER_ID;
+        pizzaIngredients = DEF_PIZZA_INGREDIENTS;
+        orderTotal = DEF_ORDER_TOTAL;
+        this.sides = sides;
+        this.drinks = drinks;
+    }
+    
+    public void Pizza(String order_ID, String pizza_ingredients, double order_total){
+        orderID = order_ID;
+        pizzaIngredients =  pizza_ingredients;
+        orderTotal = order_total;
+    }
+    
+    public String getorderID(){
+        return orderID;
+    }
+    public void setorderID(String orderID){
+        this.orderID = orderID;
+    }
+
+    public String getpizzaIngredients(){
+        return pizzaIngredients;
+    }
+    public void setpizzaIngredients(String pizzaIngredients){
+        this.pizzaIngredients = pizzaIngredients;
+    }
+    
+    public String getsides(){
+        return sides;
+    }
+    public void setsides(String sides){
+        this.sides = sides;
+    }
+    
+    public String getdrinks(){
+        return sides;
+    }
+    public void setdrinks(String drinks){
+        this.drinks = drinks;
+    }
+
+    public String getorderTotal(){
+        return sides;
+    }
+    public void setorderTotal(double orderTotal){
+        this.orderTotal = orderTotal ;
+    }
+
+    public void takeOrder(String id, String Price, String Ingredients, String sides, String drinks, double total){
     orderID = id;
     pizzaIngredients = Ingredients;
     pizzaPrice = Price;
-    sides = Sides;
-    drinks = Drinks;
+    this.sides = sides;
+    this.drinks = drinks;
     orderTotal = total;
 
     System.out.println("Order accepted!");
@@ -44,10 +97,10 @@ public void takeOrder(String id, String Price, String Ingredients, String Sides,
     
     }
 
-public void makePizza(String Ingredients, String Sides, String Drinks) {
+public void makePizza(String Ingredients, String sides, String drinks) {
     pizzaIngredients = Ingredients;
-    sides = Sides;
-    drinks = Drinks;
+    this.sides = sides;
+    this.drinks = drinks;
 }
 
 }
