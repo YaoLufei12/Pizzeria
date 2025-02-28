@@ -127,7 +127,7 @@ public void processCardPayment(String cardNumber){
         System.out.println("Card is blacklisted.Please use anthor card.");
     }
     
-    lastFourDigits = Integer.parseInt(cardNumber.substring(10, 13));
+    lastFourDigits = Integer.parseInt(cardNumber.substring(10, 14));
     cardNumberToDisplay = firstCardDigit+"*********"+lastFourDigits;
     System.out.println(cardNumberToDisplay);
 }
