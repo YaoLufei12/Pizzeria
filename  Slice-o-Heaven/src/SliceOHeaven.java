@@ -23,7 +23,7 @@ public class  SliceOHeaven {
     public int lastFourDigits;
     public String cardNumberToDisplay;
     private String cardLength = new String("14");
-    private String blacklistedNumber = new String("1111122222333");
+    private String blacklistedNumber = new String("11111222223333");
 
     public SliceOHeaven(String DEF_ORDER_ID, String DEF_PIZZA_INGREDIENTS, double DEF_ORDER_TOTAL, String sides, String drinks){
         orderID = DEF_ORDER_ID;
