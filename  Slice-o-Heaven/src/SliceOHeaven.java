@@ -15,7 +15,16 @@ public class  SliceOHeaven {
     private String sides;
     private String drinks;
     private double orderTotal;
-     
+
+    public int cvv;
+    public String cardNumber;
+    public String expiryDate;
+    public int firstCardDigit;
+    public int lastFourDigits;
+    public String cardNumberToDisplay;
+    private String cardLength = new String("14");
+    private String blacklistedNumber = new String("1111122222333");
+
     public SliceOHeaven(String DEF_ORDER_ID, String DEF_PIZZA_INGREDIENTS, double DEF_ORDER_TOTAL, String sides, String drinks){
         orderID = DEF_ORDER_ID;
         pizzaIngredients = DEF_PIZZA_INGREDIENTS;
@@ -101,6 +110,33 @@ public void makePizza(String Ingredients, String sides, String drinks) {
     pizzaIngredients = Ingredients;
     this.sides = sides;
     this.drinks = drinks;
+}
+
+public void processCardPayment(String cardNumber){
+    this.cardNumber = cardNumber;
+    
+    if(cardLength.equals("14")){
+     System.out.println("Card accepted");
+    } else{
+     System.out.println("Incalid card");
+    }
+    char firstChar = cardNumber.charAt(0);
+    int firstCardDigit = Integer.parseInt(String.valueOf(firstChar));
+    
+    if(cardNumber.equals(blacklistedNumber)){
+        System.out.println("Card is blacklisted.Please use anthor card.");
+    }
+    
+    lastFourDigits = Integer.parseInt(cardNumber.substring(10, 13));
+    cardNumberToDisplay = firstCardDigit+"*********"+lastFourDigits;
+    System.out.println(cardNumberToDisplay);
+}
+
+public void specialOfTheDay(String pizzaOfTheDay, String sideOfTheDay, double specialPrice) {
+    System.out.println("Today's special offer:");
+    System.out.println("Pizza Of The Day:"+pizzaOfTheDay);
+    System.out.println("Side Of The Day:"+sideOfTheDay);
+    System.out.println("Specialprice:"+specialPrice);
 }
 
 }
